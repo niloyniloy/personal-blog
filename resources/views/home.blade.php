@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+<?php echo hello_helper(); ?>
 @section('content')
 <div class="col-sm-8">
                     <article class="post">

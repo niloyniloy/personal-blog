@@ -16,4 +16,12 @@ Route::get('/', function () {
 });
 
 Route::get('home','HomeController@index');
-Route::get('home','HomeController@index');
+Route::get('single_post','HomeController@single_post');
+
+Route::get('contact_me','HomeController@contact_me');
+Route::get('about_me','HomeController@about_me');
+
+Route::get('admin/post','admin\PostController@index');
+Route::get('admin/all_post','admin\PostController@all_post');
+Route::get('admin/add_post','admin\PostController@add_post');
+Route::post('admin/post/insert_post','admin\PostController@insert_post');

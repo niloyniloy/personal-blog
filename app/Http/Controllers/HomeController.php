@@ -24,9 +24,19 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function single_post()
     {
-        //
+        return view('single_post');
+    }
+	
+	 public function contact_me()
+    {
+        return view('contact_me');
+    }
+	
+	 public function about_me()
+    {
+        return view('about_me');
     }
 
     /**
