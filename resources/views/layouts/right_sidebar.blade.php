@@ -1,10 +1,21 @@
+<?php
+//namespace App\Http\Controllers;
+
+//use Illuminate\Http\Request;
+
+//use App\Http\Requests;
+$user_details = App\Personal_info::get_all_info()[0];
+$category_details = App\Category::get_all_category();
+print_r($user_details);
+?>
+
  <div class="right-sidebar">
                     <div class="widget">
-                        <img class="about-photo" src="<?php echo url();?>/asset/img/photo.jpg" alt="">
+                        <img class="about-photo" src="<?php echo url();?>/<?php echo $user_details->profile_pic; ?>" alt="">
                         <h2 class="widget-title">ABOUT ME</h2>
-                        <p>Welcome to Dinlipi.<br/>
+                        <p>Welcome to <br/>
                         I'm Rasel Ahamed - Web Developer from Bangladesh. I love to do coding and love to watch movies and playing cricket.</p>
-                        <p class="social-profiles">Join me: <a href="http://facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a> <a href="http://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a> <a href="http://plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a> <a href="http://pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a></p>     
+                        <p class="social-profiles">Join me: <a href="<?php echo $user_details->fb_link; ?>" target="_blank"><i class="fa fa-facebook"></i></a> <a href="http://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a> <a href="<?php echo $user_details->google_link; ?>" target="_blank"><i class="fa fa-google-plus"></i></a> <a href="http://pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a></p>     
                     </div>
                     
                     <div class="widget">

@@ -5,14 +5,13 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
-class Admin_post extends Model
+class Tag extends Model
 {
-   static function get_all_posts() {
+   static function get_all_tags() {
 	
-	   $users = DB::table('post')
-	                ->leftJoin('category','post.category_id','=','category.id')->simplePaginate(8); 
+	   $tags = DB::table('tag')->get(); 
 	
-	   return $users;
+	   return $tags;
 	}
 	
 	static function insert_posts($request) {

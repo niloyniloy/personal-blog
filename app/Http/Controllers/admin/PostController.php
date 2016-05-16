@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\admin;
 
 use App\Admin_post as Admin_post;
+use App\Category as Category;
+use App\Personal_info as Personal_info;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -18,92 +20,72 @@ class PostController extends Controller
     {
     	return view('admin.post_list');
     }
-	
-	 public function add_post()
-     {
+
+    public function add_post()
+    {
     	return view('admin.add_post');
-     } 
-	 
-	 public function all_post()
-     {
-    	return view('admin.all_post');
-     }
+    } 
+
+    public function all_post()
+
+    {
+    	$data['post'] = Admin_post::get_all_posts();
+    	return view('admin.all_post',$data);
+    }
 
     public function insert_post(Request $request) {
-	
-	   echo $post = Admin_post::insert_posts($request);
-	
-	}
-   
-   
-    public function single_post()
-    {
-        return view('single_post');
-    }
-	
-	 public function contact_me()
-    {
-        return view('contact_me');
-    }
-	
-	 public function about_me()
-    {
-        return view('about_me');
+
+    	echo $post = Admin_post::insert_posts($request);
+    	redirect('admin/add_post');
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+
+
+    public function add_category()
     {
-        //
+    	return view('admin.add_category');
+    } 
+
+    public function all_category()
+    {
+    	$data['category'] = Category::get_all_category();
+    	return view('admin.all_category',$data);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function update_category( $category_id )
     {
-        //
+    	$data['category_details']  =  Category::get_category_details( $category_id );
+    	return view('admin.update_category',$data);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+    public function edit_update_category (Request $request) {
+
+    	$name = $request->name;
+    	$id = $request->id;
+
+    	$data['category_details']  =  Category::update_category( $id , $name );
+
+    	return redirect('admin/update_category/'.$id)->with('status', 'Profile updated!');
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    public function insert_category(Request $request) {
+
+    	echo $post = Admin_post::insert_category($request);
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function update_post(Request $request) {
+
+    	echo $post = Admin_post::insert_category($request);
+
+    }
+
+    public function personal_info() {
+
+    	$data['personal_info'] = '';
+    	return view('admin.all_category',$data);
+
     }
 }

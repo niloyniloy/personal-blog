@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 
 Route::get('home','HomeController@index');
@@ -21,7 +21,21 @@ Route::get('single_post','HomeController@single_post');
 Route::get('contact_me','HomeController@contact_me');
 Route::get('about_me','HomeController@about_me');
 
+Route::get('admin/all_tag','admin\TagController@all_tag');
+Route::get('admin/add_tag','admin\TagController@add_tag');
+
 Route::get('admin/post','admin\PostController@index');
 Route::get('admin/all_post','admin\PostController@all_post');
 Route::get('admin/add_post','admin\PostController@add_post');
 Route::post('admin/post/insert_post','admin\PostController@insert_post');
+
+
+Route::post('admin/category/insert_category','admin\PostController@insert_category');
+Route::get('admin/all_category','admin\PostController@all_category');
+Route::get('admin/add_category','admin\PostController@add_category');
+Route::get('admin/update_category/{id}','admin\PostController@update_category');
+Route::post('admin/update_category/{id}','admin\PostController@update_category');
+
+
+Route::get('admin/personal_info','admin\PostController@personal_info');
+
