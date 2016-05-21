@@ -98,7 +98,7 @@ class PostController extends Controller
 
     public function personal_info() {
 
-    	$data['personal_info'] = Personal_info::update_personal_info ( $request );
+    	$data['personal_info'] = Personal_info::get_all_info ( );
     	return view('admin.personal_info',$data);
 
     }
@@ -114,6 +114,7 @@ class PostController extends Controller
 	public function update_personal_info ( Request $request) {
 	
 	   Personal_info::update_personal_info ( $request );
-	   return redirect('admin/personal_info');
+	   $url = url();
+	   return redirect($url.'/admin/personal_info');
 	}
 }

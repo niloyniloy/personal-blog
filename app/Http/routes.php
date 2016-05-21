@@ -40,4 +40,4 @@ Route::post('admin/edit_update_category','admin\PostController@edit_update_categ
 Route::post('admin/delete_table','admin\PostController@delete_table');
 
 Route::get('admin/personal_info','admin\PostController@personal_info');
-Route::post('admin/update_personal_info','admin\PostController@personal_info');
+Route::post('admin/update_personal_info','admin\PostController@update_personal_info');

@@ -58,16 +58,13 @@ class Admin_post extends Model
 		   $file_extension = $request->file('image')->getClientOriginalExtension();
 		   $filename = time().".".$file_extension;
 		   $request->file('image')->move($destinationPath,$filename);
-		
-		} else {
-		 
-		   $filename = '';
+		   $data['image'] = $filename; 
 		}
 		
 		$data['category_id'] = $request->category_id;
 		$data['title'] = $request->title;	   
 		$data['post'] = $request->post;
-		$data['image'] = $filename;
+		
 
 		$id = DB::table('post')->where('id',$request->id)->update($data);
         $tag = array();

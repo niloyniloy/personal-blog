@@ -24,18 +24,18 @@
                                                             Name </label>
                                                         <div class="input-icon right">
                                                             <i class="fa fa-tag"></i>
-                                                            <input id="inputSubject" type="text" placeholder="" name='title' class="form-control" /></div>
+                                                            <input id="inputSubject" type="text" placeholder="" value="{{ $personal_info->name }}" name='name' class="form-control" /></div>
                                                     </div>
 													<div class="form-group">
                                                         <label for="inputSubject" class="control-label">
                                                             Email </label>
                                                         <div class="input-icon right">
                                                             <i class="fa fa-tag"></i>
-                                                            <input id="inputSubject" type="text" placeholder="" name='email' class="form-control" /></div>
+                                                            <input id="inputSubject" type="text" placeholder="" name='email' value='{{ $personal_info->email }}' class="form-control" /></div>
                                                     </div>
 													<div class="form-group">
                                                         <label for="inputSubject" class="control-label">
-                                                            Image </label>
+                                                            Profile Pic <a target="_blank" href='<?php echo url();?>/uploads/{{ $personal_info->profile_pic}}'> View Image</a></label>
                                                         <div class="input-icon right">
                                                             <i class="fa fa-tag"></i>
                                                             <input id="inputSubject" type="file" placeholder="" name='image' class="form-control" /></div>
@@ -45,37 +45,36 @@
                                                             Fb Link </label>
                                                         <div class="input-icon right">
                                                             <i class="fa fa-tag"></i>
-                                                            <input id="inputSubject" type="text" placeholder="" name='fb_link' class="form-control" /></div>
+                                                            <input id="inputSubject" type="text" placeholder="" name='fb_link' value='{{ $personal_info->fb_link }}' class="form-control" /></div>
                                                     </div>
 													<div class="form-group">
                                                         <label for="inputSubject" class="control-label">
                                                             Google Link </label>
                                                         <div class="input-icon right">
                                                             <i class="fa fa-tag"></i>
-                                                            <input id="inputSubject" type="text" placeholder="" name='google_link' class="form-control" /></div>
+                                                            <input id="inputSubject" type="text" placeholder="" name='google_link' value='{{ $personal_info->google_link }}' class="form-control" /></div>
                                                     </div>
 												     <div class="form-group">
                                                         <label for="inputSubject" class="control-label">
                                                             Contact Number </label>
                                                         <div class="input-icon right">
                                                             <i class="fa fa-tag"></i>
-                                                            <input id="inputSubject" type="text" placeholder="" name='contact_number' class="form-control" /></div>
+                                                            <input id="inputSubject" type="text" placeholder="" name='contact_number' value='{{ $personal_info->contact_number }}' class="form-control" /></div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="inputMessage" class="control-label">
-                                                            Address</label><textarea id="editor1" rows="5" name='address' class="form-control"></textarea>
+                                                            Address</label><textarea id="editor1" rows="5" name='address' class="form-control">{{ $personal_info->address }}</textarea>
 													</div>
 													<div class="form-group">
                                                         <label for="inputMessage" class="control-label">
-                                                            Description Text</label><textarea id="editor2" rows="5" name='description_text' class="form-control"></textarea>
+                                                            Description Text</label><textarea id="editor2" rows="5" name='description_text' class="form-control">{{ $personal_info->description_text }}</textarea>
 													</div>
 													<div class="form-group">
                                                         <label for="inputMessage" class="control-label">
-                                                            Description Long</label><textarea id="editor3" rows="5" name='description_long' class="form-control"></textarea>
+                                                            Description Long</label><textarea id="editor3" rows="5" name='description_long' class="form-control">{{ $personal_info->description_text }}</textarea>
 													</div>
                                                     <div class="form-group mbn">
-                                                        <div class="checkbox">
-                                                           </div>
+                                                       
                                                     </div>
                                                 </div>
                                                 <div class="form-actions text-right pal">
