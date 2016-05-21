@@ -31,6 +31,11 @@ class Category extends Model
 
 	static function update_category( $id , $name ) {
 
-		$data = DB::raw("UPDATE `category` SET name='$name' WHERE id='$id'");
+		$data = DB::table('category')->where('id', $id)->update(['name' => $name]);
+	}
+
+	static function delete_generic_table ( $table_name, $id) {
+
+		$deleted = DB::delete("delete from `$table_name` WHERE id='$id'");
 	}
 }

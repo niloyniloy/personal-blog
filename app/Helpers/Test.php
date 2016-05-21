@@ -19,6 +19,10 @@ Class Test {
 		return $a;
 		
     }
+	
+	static function post_tag_list( $post_id ) {
+	
+	}
 
 }
 

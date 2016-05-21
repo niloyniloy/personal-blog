@@ -27,12 +27,12 @@
 								</thead>
 								<tbody>
 									@foreach ($category as $category)
-									<tr>
+									<tr class='row{{  $category->id }}'>
 										<td>1</td>
 										<td>{{  $category->name }}</td>
 
 										<td>
-											<a href='<?php echo url();?>admin/update_category/{{  $category->id }}'><span class="label label-sm label-success">edit</span></a> &nbsp; 
+											<a href='<?php echo url();?>/admin/update_category/{{  $category->id }}'><span class="label label-sm label-success">edit</span></a> &nbsp; 
 
 											<a class='delete_table_view' data-table='category' data-id='{{  $category->id }}' href='javascript:void(0);'><span class="label label-sm label-success">update</span></a>
 										</td>
@@ -54,15 +54,10 @@
 
 	</div>
 </div>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js'> </script>
+<script src='<?php echo url();?>/asset/js/list.js'> </script>
 <script>
-$('document').ready(function(){
 
-	$('.delete_table_view').on('click',function(){
-
-		
-	});
-
-});
 </script>
 @endsection
 

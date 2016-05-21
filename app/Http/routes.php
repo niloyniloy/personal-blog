@@ -27,15 +27,17 @@ Route::get('admin/add_tag','admin\TagController@add_tag');
 Route::get('admin/post','admin\PostController@index');
 Route::get('admin/all_post','admin\PostController@all_post');
 Route::get('admin/add_post','admin\PostController@add_post');
+Route::get('admin/edit_post/{id}','admin\PostController@edit_post');
 Route::post('admin/post/insert_post','admin\PostController@insert_post');
+Route::post('admin/post/update_edit_post','admin\PostController@update_edit_post');
 
 
 Route::post('admin/category/insert_category','admin\PostController@insert_category');
 Route::get('admin/all_category','admin\PostController@all_category');
 Route::get('admin/add_category','admin\PostController@add_category');
 Route::get('admin/update_category/{id}','admin\PostController@update_category');
-Route::post('admin/update_category/{id}','admin\PostController@update_category');
-
+Route::post('admin/edit_update_category','admin\PostController@edit_update_category');
+Route::post('admin/delete_table','admin\PostController@delete_table');
 
 Route::get('admin/personal_info','admin\PostController@personal_info');
-
+Route::post('admin/update_personal_info','admin\PostController@personal_info');

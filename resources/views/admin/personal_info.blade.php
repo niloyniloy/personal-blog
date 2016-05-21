@@ -13,73 +13,74 @@
                                     <div class="col-lg-12">
                                         <div class="panel panel-green">
                                             <div class="panel-heading">
-                                                Add Post  </div>
+                                               Personal Info</div>
                                             <div class="panel-body pan">
-                                                <form action="post/insert_post" method="POST" enctype="multipart/form-data">
+                                                <form action="<?php echo url();?>/admin/update_personal_info" method="POST" enctype="multipart/form-data">
                                                 <div class="form-body pal">
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                <label for="inputName" class="control-label">
-                                                                    category Id</label>
-                                                                <div class="input-icon right">
-                                                                    <i class="fa fa-user"></i>
-                                                                    <select name='category_id' class='form-control'> 
-																	<option> Select </option>
-																	<?php $cat_list =  Test::bob(); ?>
-																	<?php foreach ($cat_list as $category){?>
-																	  <option  value='<?php echo $category->id; ?>'> <?php echo $category->name; ?> </option>
-																	
-																	 <?php }?>
-																
-																	</select>
-																	
-																	</div>
-                                                            </div>
-                                                        </div>
-                                                 
-                                                    </div>
+                                                    
 													<input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                     <div class="form-group">
                                                         <label for="inputSubject" class="control-label">
-                                                            Title</label>
+                                                            Name </label>
                                                         <div class="input-icon right">
                                                             <i class="fa fa-tag"></i>
                                                             <input id="inputSubject" type="text" placeholder="" name='title' class="form-control" /></div>
                                                     </div>
 													<div class="form-group">
                                                         <label for="inputSubject" class="control-label">
-                                                            Image</label>
+                                                            Email </label>
                                                         <div class="input-icon right">
                                                             <i class="fa fa-tag"></i>
-                                                            <input type="file" name='image' placeholder="" class="form-control" /></div>
+                                                            <input id="inputSubject" type="text" placeholder="" name='email' class="form-control" /></div>
                                                     </div>
 													<div class="form-group">
                                                         <label for="inputSubject" class="control-label">
-                                                            Tag</label>
+                                                            Image </label>
                                                         <div class="input-icon right">
                                                             <i class="fa fa-tag"></i>
-                                                            <select name='tag[]' id="tokenize" style='width:400px; height:40px;' multiple="multiple" class="tokenize-sample" >
-																  <?php $tag_list =  Test::tags_list(); ?>
-																	<?php foreach ($tag_list as $tag){?>
-																	  <option  value='<?php echo $tag->id; ?>'> <?php echo $tag->name; ?> </option>
-																	
-																	 <?php }?>
-															</select>
-														</div>
+                                                            <input id="inputSubject" type="file" placeholder="" name='image' class="form-control" /></div>
+                                                    </div>
+													<div class="form-group">
+                                                        <label for="inputSubject" class="control-label">
+                                                            Fb Link </label>
+                                                        <div class="input-icon right">
+                                                            <i class="fa fa-tag"></i>
+                                                            <input id="inputSubject" type="text" placeholder="" name='fb_link' class="form-control" /></div>
+                                                    </div>
+													<div class="form-group">
+                                                        <label for="inputSubject" class="control-label">
+                                                            Google Link </label>
+                                                        <div class="input-icon right">
+                                                            <i class="fa fa-tag"></i>
+                                                            <input id="inputSubject" type="text" placeholder="" name='google_link' class="form-control" /></div>
+                                                    </div>
+												     <div class="form-group">
+                                                        <label for="inputSubject" class="control-label">
+                                                            Contact Number </label>
+                                                        <div class="input-icon right">
+                                                            <i class="fa fa-tag"></i>
+                                                            <input id="inputSubject" type="text" placeholder="" name='contact_number' class="form-control" /></div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="inputMessage" class="control-label">
-                                                            Message</label><textarea id="editor1" rows="5" name='post' class="form-control"></textarea></div>
+                                                            Address</label><textarea id="editor1" rows="5" name='address' class="form-control"></textarea>
+													</div>
+													<div class="form-group">
+                                                        <label for="inputMessage" class="control-label">
+                                                            Description Text</label><textarea id="editor2" rows="5" name='description_text' class="form-control"></textarea>
+													</div>
+													<div class="form-group">
+                                                        <label for="inputMessage" class="control-label">
+                                                            Description Long</label><textarea id="editor3" rows="5" name='description_long' class="form-control"></textarea>
+													</div>
                                                     <div class="form-group mbn">
                                                         <div class="checkbox">
-                                                            <label>
-                                                                <input tabindex="5" type="checkbox" />&nbsp; Send a copy to my e-mail address</label></div>
+                                                           </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-actions text-right pal">
                                                     <button type="submit" class="btn btn-primary">
-                                                        Add Post</button>
+                                                       Update Personal Info</button>
                                                 </div>
                                                 </form>
                                             </div>

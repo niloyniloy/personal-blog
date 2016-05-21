@@ -35,9 +35,23 @@ class PostController extends Controller
 
     public function insert_post(Request $request) {
 
-    	echo $post = Admin_post::insert_posts($request);
-    	redirect('admin/add_post');
+       $post = Admin_post::insert_posts($request);
+    	return redirect('admin/add_post');
 
+    }
+
+    public function edit_post ( $id ) {
+
+    	$data = array();
+    	$data['post_details'] = Admin_post::post_details ( $id )[0];  
+    	
+    	return view('admin.edit_post',$data);
+    }
+
+    public function update_edit_post (Request $request) {
+
+    	echo $post_id = Admin_post::update_postsupdate_posts($request);
+    	redirect('admin/add_post');
     }
 
 
@@ -61,7 +75,7 @@ class PostController extends Controller
 
     public function edit_update_category (Request $request) {
 
-    	$name = $request->name;
+    	$name = $request->title;
     	$id = $request->id;
 
     	$data['category_details']  =  Category::update_category( $id , $name );
@@ -84,8 +98,22 @@ class PostController extends Controller
 
     public function personal_info() {
 
-    	$data['personal_info'] = '';
-    	return view('admin.all_category',$data);
+    	$data['personal_info'] = Personal_info::update_personal_info ( $request );
+    	return view('admin.personal_info',$data);
 
     }
+
+    public function delete_table (Request $request) {
+
+    	$table_name = $request->table_name;
+    	$id = $request->id;
+
+    	Category::delete_generic_table( $table_name , $id );
+    }
+	
+	public function update_personal_info ( Request $request) {
+	
+	   Personal_info::update_personal_info ( $request );
+	   return redirect('admin/personal_info');
+	}
 }

@@ -38,30 +38,34 @@
 										<td>Henry</td>
 										<td>{{  $user->post }}</td>
 										<td> <img width='100' src='<?php echo url();?>/uploads/{{  $user->image }}'></td>
-										<td><a class='delete_post' href=''>
-											<span class="label label-sm label-success">Approved</span>
-										</a>
+										<td>
+											<a class='delete_table_view' href='<?php echo url();?>/admin/edit_post/{{  $user->id }}'>
+												<span class="label label-sm label-success">Edit</span>
+											</a>
+											<a data-table='post' data-id='{{  $user->id }}' class='delete_table_view' href='javascript:void(0);'>
+												<span class="label label-sm label-success">Delete</span>
+											</a>
 
-									</td>
-								</tr>
-								
-								@endforeach
-								
-							</tbody>
-						</table>
-						{!! $post->render() !!}
+										</td>
+									</tr>
+
+									@endforeach
+
+								</tbody>
+							</table>
+							{!! $post->render() !!}
+						</div>
 					</div>
+
+
 				</div>
-				
-				
+
 			</div>
-			
+
+
 		</div>
-		
-		
+
 	</div>
-	
-</div>
 </div>
 
 @endsection
