@@ -31,9 +31,7 @@
                                     <tr>
                                         <td><?php echo $count= $count+1;?></td>
                                         <td>{{  $tag->name }}</td>
-
-										<td><a href=''><span class="label label-sm label-success">Edit</span></a>
-										<a href=''><span class="label label-sm label-success">Delete</span></a>
+										<td><a data-table='tag' data-id='{{   $tag->id }}' class='delete_table_view' href='javascript:void(0);'><span class="label label-sm label-success">Delete</span></a>
 										</td>
                                     </tr>
 									

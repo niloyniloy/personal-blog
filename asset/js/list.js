@@ -14,7 +14,7 @@ $('document').ready(function(){
 			var table_name = $(this).attr('data-table');
 			var  id = $(this).attr('data-id');
 
-			var url = '<?php echo url(); ?>/admin/delete_table';
+			var url = 'http://localhost/blog/admin/delete_table';
 			$.post(url,{table_name:table_name, id:id},function(response){
 
 				$('.row'+id).remove();

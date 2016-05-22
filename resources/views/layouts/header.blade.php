@@ -1,3 +1,9 @@
+<?php
+$category_details = App\Category::get_all_category();
+$user_details = App\Personal_info::get_all_info();
+
+?>
+
 <header class="header">
         <div class="header-top-area">
             <div class="container">
@@ -37,7 +43,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="logo">
-                            <h1><a href="index-2.html">Din<span>Lipi</span></a></h1>
+                            <h1><a href="index-2.html">My<span>Blog</span></a></h1>
                             
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -56,21 +62,10 @@
                         <div class="navbar-collapse collapse"> 
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="active"><a href="index-2.html">Home</a></li>
-                                <li><a href="about-me.html">About</a></li>
-                                <li class="dropdown"><a data-toggle="dropdown" href="#">Other pages <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="blog-left-sidebar.html">Home left sidebar</a></li>
-                                        <li><a href="two-column-grid.html">Home 2 column masonry</a></li>
-                                        <li><a href="three-column-grid.html">Home 3 column masonry</a></li>
-                                        <li><a href="archive.html">Post Archives</a></li>
-                                        <li><a href="single-post.html">Single post</a></li>
-                                        <li><a href="404.html">404 not found</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="archive.html">Movie</a></li>
-                                <li><a href="archive.html">Sports</a></li>
-                                <li><a href="archive.html">Travel</a></li>
-                                <li><a href="contact-me.html">Contact me</a></li>
+								@foreach ($category_details as $category)
+                                <li><a href="archive.html">{{  $category->name }}</a></li>
+								@endforeach 
+								<li class="active"><a href="index-2.html">Contact Me</a></li>
                             </ul>                                                     
                         </div>                        
                     </div>

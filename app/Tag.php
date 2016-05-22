@@ -14,6 +14,14 @@ class Tag extends Model
 	   return $tags;
 	}
 	
+	static function insert_tag($request) {
+	   
+	   $data = array();
+	   $data['name'] = $request->name;
+	   
+	   DB::table('tag')->insertGetId($data);
+	}
+	
 	static function insert_posts($request) {
 	
 	   $destinationPath =  "uploads";
@@ -28,7 +36,6 @@ class Tag extends Model
 	   $id = DB::table('post')->insertGetId($data);
 	   
 	   return $id;
-	   
-	   
+	    
 	}
 }

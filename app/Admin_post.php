@@ -15,6 +15,12 @@ class Admin_post extends Model
 		return $users;
 	}
 	
+	static function get_recent_five_post() {
+	   
+	     $users = DB::select("SELECT post.*,category.name FROM post INNER JOIN category ON post.category_id = category.id ORDER BY post.id DESC LIMIT 5");
+	     return  $users;
+	}
+	
 	static function insert_posts($request) {
 
 		$destinationPath =  "uploads";

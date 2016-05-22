@@ -11,11 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-	return view('welcome');
-});
 
-Route::get('home','HomeController@index');
+Route::get('/','HomeController@index');
 Route::get('single_post','HomeController@single_post');
 
 Route::get('contact_me','HomeController@contact_me');
@@ -23,6 +20,7 @@ Route::get('about_me','HomeController@about_me');
 
 Route::get('admin/all_tag','admin\TagController@all_tag');
 Route::get('admin/add_tag','admin\TagController@add_tag');
+Route::post('admin/insert_tag','admin\TagController@insert_tag');
 
 Route::get('admin/post','admin\PostController@index');
 Route::get('admin/all_post','admin\PostController@all_post');

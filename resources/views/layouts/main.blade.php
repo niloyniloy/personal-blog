@@ -2,9 +2,7 @@
 
     <body>
     
-    <div id="preloader">
-        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-    </div> <!-- End preloader area -->  
+   <!-- End preloader area -->  
        
     
     @include('layouts.header')

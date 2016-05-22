@@ -24,6 +24,13 @@ class TagController extends Controller
 	    $data['tags'] = Tag::get_all_tags();
     	return view('admin.all_tag',$data);
      }
+	 
+	 public function insert_tag( Request $request)
+     {
+	    $data['tags'] = Tag::insert_tag($request);
+    	return redirect(url().'/admin/add_tag');
+     }
+	 
 
     public function insert_post(Request $request) {
 	
