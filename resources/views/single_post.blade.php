@@ -1,55 +1,33 @@
 @extends('layouts.main')
-<?php echo hello_helper(); ?>
+<?php //echo hello_helper(); ?>
                 @section('content')
 				<div class="col-sm-8">
                     <article class="post">
                         <div class="entry-thumbnail">
-                            <a title="Behind Story of Some Amazing Photos" class="post-lightbox" href="<?php echo url();?>/asset/img/single-post-4.jpg"><img src="<?php echo url();?>/asset/img/single-post-4.jpg" alt="Behind Story of Some Amazing Photos"></a>
+                            <a title="Behind Story of Some Amazing Photos" class="post-lightbox" href="<?php echo url();?>uploads/{{ $post_details->image }}"><img src="<?php echo url();?>uploads/{{ $post_details->image }}" alt="Behind Story of Some Amazing Photos"></a>
                         </div>   
                         <header class="entry-header">
-                            <h2 class="entry-title"><a rel="bookmark" href="single-post.html">Behind Story of Some Amazing Photos</a></h2> <!-- //.entry-title -->
-                            <p class="posted-by">by <a href="archive.html">Farhan Rizvi</a> <i class="fa fa-clock-o"></i> 12 Oct 2015 <i class="fa fa-heart"></i> 21 <i class="fa fa-comments"></i> 6</p>
+                            <h2 class="entry-title"><a rel="bookmark" href="single-post.html">{{ $post_details->title }}</a></h2> <!-- //.entry-title -->
+                            <p class="posted-by">by <a href="archive.html">Niloy</a> <i class="fa fa-clock-o"></i> <?php echo date('d M Y', $post_details->date_time); ?>  </p>
                         </header>
 
                         <div class="entry-summary">
-                            <p>Pork meatball ground round prosciutto. Sirloin bresaola ball tip shank tail porchetta pork boudin filet mignon flank jowl salami. Filet mignon bresaola pork boudin capicola prosciutto. Frankfurter chicken leberkas drumstick ball tip turducken rump spare ribs meatball. Tail salami pork loin ham.</p>
-                            <blockquote><p>Drumstick flank porchetta, hamburger ham swine biltong chicken pancetta. Spare ribs prosciutto t-bone pork belly tenderloin beef ribs. Pork sirloin turducken leberkas andouille. Chicken turducken sausage short ribs. Fatback jerky pancetta bresaola swine t-bone, beef ribs boudin cow shoulder pork chop.</p></blockquote>
-
-                            <p>Drumstick filet mignon frankfurter <a href="#">bresaola fatback</a> jowl tenderloin pancetta sirloin pork chop ham hock chicken meatloaf bacon. Beef short ribs rump shoulder. Pork ham tail tenderloin landjaeger venison boudin turducken ground round corned beef sausage meatball bresaola. Sirloin pork ham beef ribs pork chop, salami brisket t-bone shoulder landjaeger. Bresaola spare ribs fatback bacon shankle. Ground round drumstick venison short loin beef ribs ham hock, tail jerky strip steak. Shoulder leberkas doner kielbasa pork loin bacon landjaeger sausage jowl prosciutto.</p>
-
-                            <p>Ground round drumstick pig porchetta kielbasa beef sirloin andouille spare ribs jerky rump. Meatball ball tip turkey landjaeger bacon t-bone prosciutto meatloaf short ribs jowl porchetta tongue chuck flank. Kevin leberkas shankle, andouille ground round tenderloin t-bone bacon pig jerky bresaola turkey. Salami short loin venison leberkas shoulder, tenderloin meatball.</p>
-                        </div> 
+                           <?php echo $post_details->post; ?>
+					   </div> 
 
 
                     <div class="post-content-bottom">
                         <p class="post-share">Share: <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-google-plus"></i></a> <a href="#"><i class="fa fa-pinterest"></i></a></p>
 
                         <div class="post-tags-single">
-                            <a href="archive.html">Tag 1</a>
-                            <a href="archive.html">Tag 2</a>
+						   @foreach ($all_tag as $tag)
+                            <a href="javscript:void(0);"> {{ $tag->name }} </a>
+							@endforeach
                         </div>
                     </div>
 
                     </article>   
-                    
-                    <div class="author-meta">
-                        <div class="row">
-                            <div class="col-xs-2">
-                                <img src="<?php echo url();?>/asset/img/avater.jpg" alt="Farhan Rizvi">
-                            </div>
-                            
-                            <div class="col-xs-10">
-                                <h2 class="author-name-headding">Farhan Rizvi - <span><a href="http://www.farhan-rizvi.com/">www.farhan-rizvi.com</a></span></h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                <p class="social-links">
-                                    <a href="http://facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a> 
-                                    <a href="http://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a> 
-                                    <a href="http://plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a> 
-                                    <a href="http://pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+
                     
                     <div class="related-posts">
                         <h2>You May Also Like</h2>

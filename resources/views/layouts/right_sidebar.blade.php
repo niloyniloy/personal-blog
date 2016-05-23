@@ -19,7 +19,7 @@ $recent_posts = App\Admin_post::get_recent_five_post();
                         <h2 class="widget-title">Categories</h2>
                         <ul>
 						  @foreach($category_details as $category)
-                            <li><a href="<?php echo url();?>">{{ $category->name}}</a></li>
+                            <li><a href="<?php echo url();?>/category/{{ $category->name}}">{{ $category->name}}</a></li>
              
 						@endforeach
                         </ul>

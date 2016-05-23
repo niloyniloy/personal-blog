@@ -38,4 +38,11 @@ class Personal_info extends Model
 
 
 	}
+	
+	static function get_all_skills () {
+	  
+	    $all_skills = DB::select("SELECT * FROM skills order by `order`");
+		return $all_skills;
+	
+	}
 }

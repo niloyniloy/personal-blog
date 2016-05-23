@@ -9,7 +9,7 @@
                         </div>
                         
                         <div class="post-content">
-                            <p class="post-categories"><a href="archive.html">{{ $post->name }}</a></p>
+                            <p class="post-categories"><a href="<?php echo url();?>/category/{{ $post->name}}">{{ $post->name }}</a></p>
                             <h2><a href="single-post.html">{{ $post->title }}</a></h2>
                             <p class="posted-by">by <a href="#">Niloy</a> <i class="fa fa-clock-o"></i> <?php echo date('d M Y',$post->date_time ); ?> <i class="fa fa-heart"></i> 21 <i class="fa fa-comments"></i> 6</p>
                             <div class="post-excerpt">

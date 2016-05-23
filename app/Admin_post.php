@@ -15,6 +15,19 @@ class Admin_post extends Model
 		return $users;
 	}
 	
+	static function get_category_posts( $category_name ) {
+	
+	    $users = DB::table('post')->select('post.*','category.name')
+		->leftJoin('category','post.category_id','=','category.id')->where('category.name',$category_name)->simplePaginate(8); 
+		return $users;
+	}
+	
+	static function get_post_detals( $cat_name, $post_url_slug ) {
+	
+	   $post_details = DB::select("SELECT post.*, category.name FROM post INNER JOIN  category ON post.category_id = category.id WHERE post.slug ='$post_url_slug' AND category.name='$cat_name'");
+	   return $post_details[0];
+	}
+	
 	static function get_recent_five_post() {
 	   
 	     $users = DB::select("SELECT post.*,category.name FROM post INNER JOIN category ON post.category_id = category.id ORDER BY post.id DESC LIMIT 5");
@@ -84,6 +97,12 @@ class Admin_post extends Model
 		} 
 		return $id;
 
+	}
+	
+	static function get_post_tags( $cat_name, $post_url_slug ) {
+	
+	    $all_tags = DB::select("SELECT tag.name FROM (SELECT * FROM post where slug='$post_url_slug') AS post INNER JOIN post_tag ON post.id = post_tag.post_id INNER JOIN tag ON post_tag.tag_id = tag.id ");
+	     return $all_tags;
 	}
 
 	static function post_details ( $id ) {

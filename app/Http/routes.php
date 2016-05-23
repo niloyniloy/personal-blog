@@ -13,7 +13,8 @@
 
 
 Route::get('/','HomeController@index');
-Route::get('single_post','HomeController@single_post');
+Route::get('category/{id}','HomeController@category');
+Route::get('{category}/{post_slug}','HomeController@post_details');
 
 Route::get('contact_me','HomeController@contact_me');
 Route::get('about_me','HomeController@about_me');

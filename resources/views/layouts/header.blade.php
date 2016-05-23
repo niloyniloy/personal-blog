@@ -63,7 +63,7 @@ $user_details = App\Personal_info::get_all_info();
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="active"><a href="index-2.html">Home</a></li>
 								@foreach ($category_details as $category)
-                                <li><a href="archive.html">{{  $category->name }}</a></li>
+                                <li><a href="<?php echo url();?>/category/{{ $category->name}}">{{  $category->name }}</a></li>
 								@endforeach 
 								<li class="active"><a href="index-2.html">Contact Me</a></li>
                             </ul>                                                     
