@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Admin_post as Admin_post;
 use App\Http\Requests;
+use App\Personal_info as Personal_info;
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
@@ -45,8 +46,9 @@ class HomeController extends Controller
 	
 	 public function about_me()
     {
-	    $data['user_details'] = App\Personal_info::get_all_info();
-		$data['skills'] = App\Personal_info::get_all_skills();
+	    $data['user_details'] = Personal_info::get_all_info();
+		$data['skills'] = Personal_info::get_all_skills();
+		$data['experience'] = Personal_info::get_all_experience();
         return view('about_me', $data);
     }
 

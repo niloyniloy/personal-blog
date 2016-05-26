@@ -45,4 +45,10 @@ class Personal_info extends Model
 		return $all_skills;
 	
 	}
+	
+	static function get_all_experience() {
+	
+	    $all_skills = DB::select("SELECT * FROM experiences order by `order`");
+		return $all_skills;
+	}
 }

@@ -14,7 +14,7 @@
 
 Route::get('/','HomeController@index');
 Route::get('category/{id}','HomeController@category');
-Route::get('{category}/{post_slug}','HomeController@post_details');
+
 
 Route::get('contact_me','HomeController@contact_me');
 Route::get('about_me','HomeController@about_me');
@@ -40,3 +40,5 @@ Route::post('admin/delete_table','admin\PostController@delete_table');
 
 Route::get('admin/personal_info','admin\PostController@personal_info');
 Route::post('admin/update_personal_info','admin\PostController@update_personal_info');
+
+Route::get('{category}/{post_slug}','HomeController@post_details');

@@ -35,17 +35,13 @@
                             <p class="ex-date">July 2011 - Nov 2013</p>
                             <p>Veniam doner turducken pariatur, enim ham hock bresaola short loin beef ribs bacon.</p>
                         </div>
-                        <div class="single-experience">
-                            <h3>Senior Web Developer, IT Ltd.</h3>
-                            <p class="ex-date">July 2011 - Nov 2013</p>
-                            <p>Veniam doner turducken pariatur, enim ham hock bresaola short loin beef ribs bacon.</p>
-                        </div>
+                      
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="about-widget">
                         <h3 class="about-title">My Skills</h3>
-						@foreach ($all_skills as $skills)
+						@foreach ($skills as $skills)
                         <div class="single-skill">
                             <p>{{ $skills->name }}</p>
                             <div class="progress">
