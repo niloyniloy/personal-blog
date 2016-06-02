@@ -18,6 +18,7 @@ Route::get('category/{id}','HomeController@category');
 
 Route::get('contact_me','HomeController@contact_me');
 Route::get('about_me','HomeController@about_me');
+Route::post('insert_send_msg','HomeController@insert_send_msg');
 
 Route::get('admin/all_tag','admin\TagController@all_tag');
 Route::get('admin/add_tag','admin\TagController@add_tag');

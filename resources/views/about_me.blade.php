@@ -28,15 +28,19 @@
                     </div>
                 </div>
                 <div class="col-md-4">
+				  
+				  
                     <div class="about-widget">
                         <h3 class="about-title">Professional Experiences</h3>
+						@foreach ($experience as $exp)
                         <div class="single-experience">
-                            <h3>Senior Web Developer, IT Ltd.</h3>
-                            <p class="ex-date">July 2011 - Nov 2013</p>
-                            <p>Veniam doner turducken pariatur, enim ham hock bresaola short loin beef ribs bacon.</p>
+                            <h3>{{ $exp->title }}</h3>
+                            <p class="ex-date">{{ $exp->time }}</p>
+                            <p>{{ $exp->description }}</p>
                         </div>
-                      
+                      @endforeach	
                     </div>
+				 
                 </div>
                 <div class="col-md-4">
                     <div class="about-widget">

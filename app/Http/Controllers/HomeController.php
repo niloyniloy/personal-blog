@@ -51,6 +51,11 @@ class HomeController extends Controller
 		$data['experience'] = Personal_info::get_all_experience();
         return view('about_me', $data);
     }
+	
+	public function insert_send_msg(Request $request) {
+	
+	   Personal_info::insert_send_msg ($request);
+	}
 
     /**
      * Store a newly created resource in storage.

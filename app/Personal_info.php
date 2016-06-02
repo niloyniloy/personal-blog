@@ -51,4 +51,19 @@ class Personal_info extends Model
 	    $all_skills = DB::select("SELECT * FROM experiences order by `order`");
 		return $all_skills;
 	}
+	
+	static function insert_send_msg ($request) {
+	
+	     $data = array();
+		 $data['name'] = $request->name;
+	     $data['email'] = $request->email;
+		 $data['subject'] = $request->subject;
+		 $data['msg'] = $request->msg;
+		 $data['time'] = time();
+		 
+		 $id = DB::table('send_messages')->insertGetId($data);
+		
+		 
+		 
+	}
 }

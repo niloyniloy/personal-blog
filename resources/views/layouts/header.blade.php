@@ -11,9 +11,9 @@ $user_details = App\Personal_info::get_all_info();
                     <div class="col-sm-6">
                         <div class="header-left-menu">
                             <ul>
-                                <li><a href="index-2.html">Home</a></li>
-                                <li><a href="about-me.html">About me</a></li>
-                                <li><a href="contact-me.html">Contact me</a></li>
+                                <li><a href="<?php echo url();?>/">Home</a></li>
+                                <li><a href="<?php echo url();?>/about_me">About me</a></li>
+                                <li><a href="<?php echo url();?>/contact_me">Contact me</a></li>
                             </ul>
                         </div>
                     </div>
@@ -21,7 +21,7 @@ $user_details = App\Personal_info::get_all_info();
                     <div class="col-sm-6">
                         <div class="social-icon">
                             <a target="_blank" href="http://facebook.com/"><i class="fa fa-facebook"></i></a>
-                            <a target="_blank" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                            <a target="_blank" href="http://twitter.com/"><i class="fa fa-github"></i></a>
                             <a target="_blank" href="http://plus.google.com/"><i class="fa fa-google-plus"></i></a>
                             <a target="_blank" href="http://linkedin.com/"><i class="fa fa-linkedin"></i></a>
                             <a target="_blank" href="http://instagram.com/"><i class="fa fa-instagram"></i></a>
@@ -43,7 +43,7 @@ $user_details = App\Personal_info::get_all_info();
                 <div class="row">
                     <div class="col-md-3">
                         <div class="logo">
-                            <h1><a href="index-2.html">My<span>Blog</span></a></h1>
+                            <h1><a href="index-2.html"><?php echo config('custom.logo_title1'); ?><span><?php echo config('custom.logo_title2'); ?></span></a></h1>
                             
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
