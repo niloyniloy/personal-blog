@@ -20,6 +20,13 @@ class Post_visitor extends Model
 	  
 	}
 	
+	static function all_post_visitor_info() {
+	   
+	   $all_visitor = DB::select("SELECT * FROM post_visitor order by id DESC");
+	   return $all_visitor; 
+	
+	}
+	
 	static function get_ip_address () {
 	
 	if (!empty($_SERVER["HTTP_CLIENT_IP"]))

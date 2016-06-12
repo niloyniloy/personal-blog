@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Admin_post as Admin_post;
 use App\Category as Category;
 use App\Personal_info as Personal_info;
+use App\Post_visitor as Post_visitor;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -123,6 +124,7 @@ class PostController extends Controller
 	
 	public function get_visitor_info() {
 	
-	
+	    $data['all_visitor'] = Post_visitor::all_post_visitor_info();
+    	return view('admin.all_visitor',$data);
 	}
 }
