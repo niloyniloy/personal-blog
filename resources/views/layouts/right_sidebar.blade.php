@@ -30,7 +30,7 @@ $recent_posts = App\Admin_post::get_recent_five_post();
 						@foreach($recent_posts as  $post )
                         <div class="single-wid-post">
                             <a href="single-post.html">
-                                <img src="<?php echo url();?>/asset/img/post-thumb.jpg" alt="" class="alignleft">
+                                <img width='74' src="<?php echo url();?>/uploads/{{ $post->image  }}" alt="" class="alignleft">
                                 <h2>{{ $post->title }}</h2>
                             </a>
                             <p><i class="fa fa-clock-o"></i> <?php echo date('d M, Y',$post->date_time)?></p>

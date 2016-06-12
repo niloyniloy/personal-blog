@@ -15,7 +15,7 @@
                                             <div class="panel-heading">
                                                 Add Category </div>
                                             <div class="panel-body pan">
-                                                <form action="post/insert_category" method="POST" enctype="multipart/form-data">
+                                                <form action="category/insert_category" method="POST" enctype="multipart/form-data">
                                                 <div class="form-body pal">
                                                     <div class="row">
                                                         <div class="col-md-12">

@@ -36,6 +36,19 @@
     <script src="<?php echo url();?>/asset/inc/venobox/venobox.min.js"></script>
     <script src="<?php echo url();?>/asset/js/main.js"></script>
     <script src="<?php echo url();?>/asset/js/color-change-function.js"></script>
+	<script > 
+	$(document).ready(function() {
+  $.ajaxSetup({ cache: true });
+  $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
+    FB.init({
+      appId: '126757904410144',
+      version: 'v2.5' // or v2.0, v2.1, v2.2, v2.3
+    });     
+    $('#loginbutton,#feedbutton').removeAttr('disabled');
+    FB.getLoginStatus(updateStatusCallback);
+  });
+});
+	</script>
   </body>
 
 <!-- Mirrored from demos.wpexpand.com/html/dinilipi/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Jul 2015 18:18:59 GMT -->

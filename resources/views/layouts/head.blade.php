@@ -1,3 +1,8 @@
+<?php
+
+app\Post_visitor::insert_post_visitor();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   
@@ -6,7 +11,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo config('custom.site_title');?></title>
+	
+	<title><?php echo config('custom.site_title');?></title>
 	<meta name="csrf-token" content="{{ csrf_token() }}">
     
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,200,700,600,500,800,900,100' rel='stylesheet' type='text/css'>
@@ -35,5 +41,14 @@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	  
     <![endif]-->
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
     </head>
+	

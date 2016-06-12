@@ -86,13 +86,16 @@ class PostController extends Controller
 
     public function insert_category(Request $request) {
 
-    	echo $post = Admin_post::insert_category($request);
+    	$post = Admin_post::insert_category($request);
+		return redirect('admin/add_category')->with('status', 'Profile updated!');
 
     }
 
     public function update_post(Request $request) {
 
-    	echo $post = Admin_post::insert_category($request);
+       $post = Admin_post::update_posts($request);
+	   return redirect('admin/edit_post/'.$request->id)->with('status', 'Profile updated!');
+
 
     }
 
@@ -116,5 +119,10 @@ class PostController extends Controller
 	   Personal_info::update_personal_info ( $request );
 	   $url = url();
 	   return redirect($url.'/admin/personal_info');
+	}
+	
+	public function get_visitor_info() {
+	
+	
 	}
 }

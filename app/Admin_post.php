@@ -64,7 +64,7 @@ class Admin_post extends Model
 		   $tag['post_id'] = $id;
 		   $tag['tag_id'] = $tags;
 		   
-		   DB::table('post_tag')->insertGetId($tag);
+		  
 		} 
 		return $id;
 	}
@@ -109,5 +109,13 @@ class Admin_post extends Model
 
 		return   DB::select("SELECT * FROM post WHERE id='$id'");
 		//return $a;
+	}
+	
+	static function insert_category($request) {
+	
+	       $category = array();
+		   $category['name'] = $request->title;
+		   
+		   DB::table('category')->insertGetId($category);
 	}
 }

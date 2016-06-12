@@ -65,7 +65,7 @@
 																			<?php $tag_list =  Test::tags_list(); ?>
 																			<?php $selected_tag_list =  Test::post_tag_list( $post_details->id ); ?>
 																			<?php foreach ($tag_list as $tag){?>
-																			<option  value='<?php echo $tag->id; ?>'> <?php echo $tag->name; ?> </option>
+																			<option  value='<?php echo $tag->id; ?>' <?php if (in_array($tag->id,$selected_tag_list )) {echo "selected";}?>> <?php echo $tag->name; ?> </option>
 
 																			<?php }?>
 																		</select>

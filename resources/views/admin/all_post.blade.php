@@ -36,10 +36,22 @@
 										<td>{{  $user->name }}</td>
 										<td>{{  $user->title }}</td>
 										<td>Henry</td>
-										<td>{{  $user->post }}</td>
-										<td> <img width='100' src='<?php echo url();?>/uploads/{{  $user->image }}'></td>
 										<td>
-											<a class='delete_table_view' href='<?php echo url();?>/admin/edit_post/{{  $user->id }}'>
+										<?php
+								        $character_limit = 120;
+								        $main_post = $user->post;
+								 if (strlen($main_post) > 100) {
+								    
+									 echo substr($main_post, 0, $character_limit);
+								 } else {
+								 
+								    echo $main_post;
+								 }
+								?>
+										</td>
+										<td> <img width='50' src='<?php echo url();?>/uploads/{{  $user->image }}'></td>
+										<td>
+											<a class='' href='<?php echo url();?>/admin/edit_post/{{  $user->id }}'>
 												<span class="label label-sm label-success">Edit</span>
 											</a>
 											<a data-table='post' data-id='{{  $user->id }}' class='delete_table_view' href='javascript:void(0);'>

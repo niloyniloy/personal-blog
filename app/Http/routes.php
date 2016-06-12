@@ -29,7 +29,7 @@ Route::get('admin/all_post','admin\PostController@all_post');
 Route::get('admin/add_post','admin\PostController@add_post');
 Route::get('admin/edit_post/{id}','admin\PostController@edit_post');
 Route::post('admin/post/insert_post','admin\PostController@insert_post');
-Route::post('admin/post/update_edit_post','admin\PostController@update_edit_post');
+Route::post('admin/post/update_edit_post','admin\PostController@update_post');
 
 
 Route::post('admin/category/insert_category','admin\PostController@insert_category');
@@ -41,5 +41,7 @@ Route::post('admin/delete_table','admin\PostController@delete_table');
 
 Route::get('admin/personal_info','admin\PostController@personal_info');
 Route::post('admin/update_personal_info','admin\PostController@update_personal_info');
+
+Route::get('admin/post_visitor_info','admin\PostController@get_visitor_info');
 
 Route::get('{category}/{post_slug}','HomeController@post_details');

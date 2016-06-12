@@ -30,23 +30,6 @@
         });
         
         
-        // jQuery Instafeed
-        var userFeed = new Instafeed({
-            limit: 12,
-            get: 'tagged',
-            tagName: 'nature',
-            accessToken: '1189321718.467ede5.59564e795f3d4cedbd2d5c5a33b03ca1',
-            template: '<a target="_blank" href="{{link}}"><img src="{{image}}" /></a>'
-        });
-        userFeed.run();     
-        
-        // jQuery twittie
-        $('#tweet').twittie({
-            count: 3,
-            template: '{{tweet}} <div class="twieet-date"><i class="fa fa-twitter"></i> {{date}}</div>'
-        });  
-        
-        
         // jQuery Lightbox
         $('.post-lightbox').venobox();        
         
