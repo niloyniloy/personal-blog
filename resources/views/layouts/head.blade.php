@@ -1,6 +1,6 @@
 <?php
 
-app\Post_visitor::insert_post_visitor();
+//app\Post_visitor::insert_post_visitor();
 ?>
 
 <!DOCTYPE html>

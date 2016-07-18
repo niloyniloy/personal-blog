@@ -127,4 +127,10 @@ class PostController extends Controller
 	    $data['all_visitor'] = Post_visitor::all_post_visitor_info();
     	return view('admin.all_visitor',$data);
 	}
+	
+	public function generate_slug() {
+	
+	   Admin_post::generate_slug();
+	
+	}
 }

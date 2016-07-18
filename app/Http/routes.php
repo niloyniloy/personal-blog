@@ -21,6 +21,7 @@ Route::get('about_me','HomeController@about_me');
 Route::post('insert_send_msg','HomeController@insert_send_msg');
 
 Route::get('admin/all_tag','admin\TagController@all_tag');
+Route::get('admin/generate_slug','admin\PostController@generate_slug');
 Route::get('admin/add_tag','admin\TagController@add_tag');
 Route::post('admin/insert_tag','admin\TagController@insert_tag');
 

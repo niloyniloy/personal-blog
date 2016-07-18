@@ -1,0 +1,14 @@
+{
+    "name": "niloy/timezones",
+    "description": "A test package",
+    "type": "1",
+    "license": "1",
+    "authors": [
+        {
+            "name": "niloybanik",
+            "email": "niloy.cste@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

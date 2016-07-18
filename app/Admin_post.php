@@ -118,4 +118,15 @@ class Admin_post extends Model
 		   
 		   DB::table('category')->insertGetId($category);
 	}
+	
+	static function generate_slug() {
+	
+	      $all_posts = DB::select("SELECT * FROM  `post`");
+		  foreach ($all_posts as $posts) {
+		     
+		    $data['slug'] = strtolower(str_replace(" ","-", $posts->title));
+			DB::table('post')->where('id', $posts->id)->update($data);
+			
+		  } 
+	}
 }
