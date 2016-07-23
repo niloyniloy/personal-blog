@@ -42,7 +42,7 @@ $user_details = App\Personal_info::get_all_info();
                 <div class="row">
                     <div class="col-md-3">
                         <div class="logo">
-                            <h1><a href="index-2.html"><?php echo config('custom.logo_title1'); ?><span><?php echo config('custom.logo_title2'); ?></span></a></h1>
+                            <h1><a href="<?php echo url();?>/"><?php echo config('custom.logo_title1'); ?><span><?php echo config('custom.logo_title2'); ?></span></a></h1>
                             
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">

@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="<?php echo url();?>/asset/css/responsive.css">
     
     <link rel="stylesheet" href="<?php echo url();?>/asset/css/color-change-function.css">
+	<script src="<?php echo url();?>/asset/js/vendor/jquery.1.11.1.js"></script>
     
     <!-- Favicons -->
     <link rel="apple-touch-icon-precomposed" href="<?php echo url();?>/asset/img/apple-touch-icon-precomposed.html">

@@ -412,7 +412,7 @@ body .tag-cloud a:hover {
     text-decoration: none;
 }
 .tag-cloud { overflow: hidden }
-.footer { background: none repeat scroll 0 0 #eee }
+.footer { background: none repeat scroll 0 0 #E3D1A2; }
 .footer-widget {
     padding: 70px 0;
     overflow: hidden;

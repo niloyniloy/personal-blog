@@ -25,7 +25,7 @@
      @include('layouts.footer')
     
     <!-- jQuery & others scripts  -->
-    <script src="<?php echo url();?>/asset/js/vendor/jquery.1.11.1.js"></script>
+   
 
     <script src="<?php echo url();?>/asset/js/bootstrap.min.js"></script>
     <script src="<?php echo url();?>/asset/js/jquery.sticky.js"></script>
@@ -38,15 +38,23 @@
     <script src="<?php echo url();?>/asset/js/color-change-function.js"></script>
 	<script > 
 	$(document).ready(function() {
-  $.ajaxSetup({ cache: true });
-  $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
-    FB.init({
+    $.ajaxSetup({ cache: true });
+    $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
+     FB.init({
       appId: '126757904410144',
       version: 'v2.5' // or v2.0, v2.1, v2.2, v2.3
-    });     
-    $('#loginbutton,#feedbutton').removeAttr('disabled');
-    FB.getLoginStatus(updateStatusCallback);
-  });
+     });     
+     $('#loginbutton,#feedbutton').removeAttr('disabled');
+         FB.getLoginStatus(updateStatusCallback);
+     });
+  
+    $('.social_link').on('click',function(){
+	
+	  var attr_href = $(this).attr('data-href');
+      window.open(attr_href, '', '_blank');
+     
+    });
+  
 });
 	</script>
   </body>
