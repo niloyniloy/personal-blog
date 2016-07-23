@@ -20,13 +20,12 @@ $user_details = App\Personal_info::get_all_info();
                     
                     <div class="col-sm-6">
                         <div class="social-icon">
-                            <a target="_blank" href="http://facebook.com/"><i class="fa fa-facebook"></i></a>
-                            <a target="_blank" href="http://twitter.com/"><i class="fa fa-github"></i></a>
-                            <a target="_blank" href="http://plus.google.com/"><i class="fa fa-google-plus"></i></a>
-                            <a target="_blank" href="http://linkedin.com/"><i class="fa fa-linkedin"></i></a>
-                            <a target="_blank" href="http://instagram.com/"><i class="fa fa-instagram"></i></a>
-                            <a target="_blank" href="http://dribble.com/"><i class="fa fa-dribbble"></i></a>
-                            <a target="_blank" href="http://behance.com/"><i class="fa fa-behance"></i></a>
+                            <a target="_blank" href="<?php echo config('custom.facebook_url');?>"><i class="fa fa-facebook"></i></a>
+                            <a target="_blank" href="<?php echo config('custom.github_url');?>"><i class="fa fa-github"></i></a>
+                            <a target="_blank" href="<?php echo config('custom.google_plus_url');?>"><i class="fa fa-google-plus"></i></a>
+                            <a target="_blank" href="<?php echo config('custom.linkedin_url');?>"><i class="fa fa-linkedin"></i></a>
+                            <a target="_blank" href="<?php echo config('custom.twitter_url');?>"><i class="fa fa-twitter"></i></a>
+
                         </div>
                         
                         <form action="http://demos.wpexpand.com/html/dinilipi/index.html" class="search-form" method="get" role="search">
@@ -61,11 +60,11 @@ $user_details = App\Personal_info::get_all_info();
                     <div class="col-md-9">
                         <div class="navbar-collapse collapse"> 
                             <ul class="nav navbar-nav navbar-right">
-                                <li class="active"><a href="index-2.html">Home</a></li>
+                                <li class="active"><a href="<?php echo url();?>/">Home</a></li>
 								@foreach ($category_details as $category)
                                 <li><a href="<?php echo url();?>/category/{{ $category->name}}">{{  $category->name }}</a></li>
 								@endforeach 
-								<li class="active"><a href="index-2.html">Contact Me</a></li>
+								<li class="active"><a href="<?php echo url();?>/contact_me">Contact Me</a></li>
                             </ul>                                                     
                         </div>                        
                     </div>

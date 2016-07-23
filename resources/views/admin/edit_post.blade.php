@@ -100,7 +100,7 @@
 												@endsection
 												<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 												<script type="text/javascript" src="<?php echo url();?>/asset/jquery.tokenize.js"></script>
-												<script src="//cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+												<script src="<?php echo url();?>/asset/ckeditor/ckeditor.js"></script>
 												<link rel="stylesheet" type="text/css" href="<?php echo url();?>/asset/jquery.tokenize.css" />
 												<script>
                 // Replace the <textarea id="editor1"> with a CKEditor
@@ -111,7 +111,16 @@
                 $('document').ready(function(){
 
                 	$('#tokenize').tokenize();
-                	CKEDITOR.replace('editor1');
+                	 CKEDITOR.replace( 'editor1', {
+	                 extraPlugins: 'autogrow',
+					 extraPlugins: 'codesnippet',
+					 codeSnippet_theme: 'dark',
+					 
+	                 autoGrow_maxHeight: 1500,
+
+	                     // Remove the Resize plugin as it does not make sense to use it in conjunction with the AutoGrow plugin.
+	                 removePlugins: 'resize'
+                    });
 
                 });
 

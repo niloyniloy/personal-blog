@@ -35,4 +35,8 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
+	config.extraPlugins = 'autogrow';
+config.autoGrow_minHeight = 200;
+config.autoGrow_maxHeight = 600;
+config.autoGrow_bottomSpace = 50;
 };

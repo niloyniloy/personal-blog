@@ -60,7 +60,7 @@
 	<script src="<?php echo url();?>/asset/admin_asset/script/zabuto_calendar.min.js"></script>
 <script type="text/javascript" src="http://localhost/blog/asset/jquery.tokenize.js"></script>
 			    			
-			     <script src="//cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+			     <script src="<?php echo url();?>/asset/ckeditor/ckeditor.js"></script>
 				<link rel="stylesheet" type="text/css" href="<?php echo url();?>/asset/jquery.tokenize.css" />
 				
 
@@ -78,9 +78,19 @@
 				      displayDropdownOnFocus: true
 				   });
 				      
-					  CKEDITOR.replace('editor1');
-					  CKEDITOR.replace('editor2');
-					  CKEDITOR.replace('editor3');
+					 // CKEDITOR.replace('editor1');
+					  //CKEDITOR.replace('editor2');
+					  //CKEDITOR.replace('editor3');
+					  
+					  CKEDITOR.replace( 'editor1', {
+	extraPlugins: 'autogrow',
+	autoGrow_maxHeight: 800,
+
+	// Remove the Resize plugin as it does not make sense to use it in conjunction with the AutoGrow plugin.
+	removePlugins: 'resize'
+});
+
+
 
 				  });
                    

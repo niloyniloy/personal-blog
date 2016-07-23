@@ -12,7 +12,14 @@ $recent_posts = App\Admin_post::get_recent_five_post();
                         <img class="about-photo" src="<?php echo url();?>/uploads/<?php echo $user_details->profile_pic; ?>" alt="Profile Pic">
                         <h2 class="widget-title">ABOUT ME</h2>
                         <p><?php echo $user_details->description_text;?></p>
-                        <p class="social-profiles">Join me: <a href="<?php echo $user_details->fb_link; ?>" target="_blank"><i class="fa fa-facebook"></i></a> <a href="http://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a> <a href="<?php echo $user_details->google_link; ?>" target="_blank"><i class="fa fa-google-plus"></i></a> <a href="http://pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i></a></p>     
+                        <p class="social-profiles">Join me: 
+						
+						<a href="<?php echo config('custom.facebook_url');?>" target="_blank"><i class="fa fa-facebook"></i></a>
+						<a href="<?php echo config('custom.twitter_url');?> target="_blank"><i class="fa fa-twitter"></i></a> 
+						<a href="<?php echo config('custom.google_plus_url');?>" target="_blank"><i class="fa fa-google-plus"></i></a> 
+						<a href="<?php echo config('custom.github_url');?>" target="_blank"><i class="fa fa-github"></i></a>
+						
+						</p>     
                     </div>
                     
                     <div class="widget">
